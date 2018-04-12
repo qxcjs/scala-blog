@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Books
+GET         /books                   controllers.BooksController.index
+GET         /books/add               controllers.BooksController.create
+GET         /books/show/:id          controllers.BooksController.show(id:Int)
+GET         /books/edit/:id          controllers.BooksController.edit(id:Int)
+POST        /books/modify/:id        controllers.BooksController.update(id:Int)
+GET         /books/delete/:id        controllers.BooksController.destroy(id:Int)
+POST        /books/save/             controllers.BooksController.save
+
+# Index
+GET         /                        controllers.HomeController.index
+
+# Assets
+GET         /assets/*file            controllers.Assets.versioned(path="/public", file: Asset)
+
+# Blog
+GET         /blog             controllers.BlogController.index
+GET         /blog/about             controllers.BlogController.about
+GET         /blog/contact        controllers.BlogController.contact
+GET         /blog/single        controllers.BlogController.single

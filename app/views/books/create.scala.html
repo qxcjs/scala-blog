@@ -1,0 +1,11 @@
+@(bookForm: Form[forms.BookForm.Data])(implicit request: MessagesRequestHeader)
+
+    @layout("Create Book") {
+        @helper.form(action = routes.BooksController.save()) {
+            @helper.CSRF.formField
+            @helper.inputText(bookForm("title"))
+            @helper.inputText(bookForm("price"))
+            @helper.inputText(bookForm("author"))
+            <button class="btn btn-success" type="submit">Create Book</button>
+        }
+    }
